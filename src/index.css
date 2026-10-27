@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    --color-surface-bg: #FFFFFF;
+    --color-card-bg: #FFFFFF;
+    --color-card-border: #E5E7EB;
+    --color-accent-yellow: #FACC15;
+  }
+
+  html, body {
+    font-family: var(--font-sans);
+    background-color: #FFFFFF;
+    color: #374151;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Global visible focus indicator for keyboard accessibility with Yellow accent */
+  :focus-visible {
+    outline: 2px solid #FACC15;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom scrollbars for clean minimal light research dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Clean Minimal White Research Surfaces */
+.research-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.75rem;
+  color: #374151;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+.research-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.research-card-hover:hover {
+  border-color: #D1D5DB;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Sidebar: Background #090909, Border #262626 */
+.sidebar-charcoal {
+  background-color: #090909;
+  border-right: 1px solid #262626;
+}
+
+/* Monospace data cells */
+.data-mono {
+  font-family: var(--font-mono);
+}
+
+/* Reduced-motion accessibility preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
